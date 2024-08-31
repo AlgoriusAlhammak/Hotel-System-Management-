@@ -36,7 +36,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="ff" red="cc" type="rgb"/>
+          <Color blue="cc" green="ff" red="66" type="rgb"/>
         </Property>
       </Properties>
 
@@ -66,7 +66,7 @@
                       </Group>
                       <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="159" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,6 +113,11 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="ff" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -162,6 +167,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add New Student"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
@@ -170,6 +178,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Insert New Data"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
@@ -178,6 +189,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registered Students"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
@@ -186,6 +200,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Results"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
@@ -194,6 +211,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
@@ -202,6 +222,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Operations"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -239,17 +262,17 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="12">
-                <StringItem index="0" value="Bachelor of Arts (B.A.)"/>
-                <StringItem index="1" value="Bachelor of Science (B.Sc.)"/>
-                <StringItem index="2" value="Bachelor of Technology (B.Tech)"/>
-                <StringItem index="3" value="Bachelor of Engineering (B.E.)"/>
-                <StringItem index="4" value="Bachelor of Business Administration (B.B.A.)"/>
-                <StringItem index="5" value="Master of Arts (M.A.)"/>
-                <StringItem index="6" value="Master of Science (M.S)"/>
-                <StringItem index="7" value="Master of Technology (M.Tech)"/>
-                <StringItem index="8" value="Master of Business Administration (MBA.)"/>
-                <StringItem index="9" value="Master of Engineering (M.Eng)"/>
-                <StringItem index="10" value="Doctor of Philosophy (Ph.D.)"/>
+                <StringItem index="0" value="B.A."/>
+                <StringItem index="1" value="B.Sc."/>
+                <StringItem index="2" value="B.Tech"/>
+                <StringItem index="3" value="B.Eng"/>
+                <StringItem index="4" value="B.B.A"/>
+                <StringItem index="5" value="M.A"/>
+                <StringItem index="6" value="M.Sc"/>
+                <StringItem index="7" value="M.Tech"/>
+                <StringItem index="8" value="MBA"/>
+                <StringItem index="9" value="M.Eng"/>
+                <StringItem index="10" value="Ph.D"/>
                 <StringItem index="11" value=" "/>
               </StringArray>
             </Property>

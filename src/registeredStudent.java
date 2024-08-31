@@ -1,5 +1,7 @@
 import java.sql.*;
+import static java.time.Clock.system;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 
@@ -107,25 +109,62 @@ public class registeredStudent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setText("Add New Student");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton8.setText("Insert New Data");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(255, 204, 204));
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton9.setText("Registered Students");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton10.setText("Results");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton11.setText("Logout");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton12.setText("Operations");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -155,22 +194,28 @@ public class registeredStudent extends javax.swing.JFrame {
                 .addComponent(jButton10)
                 .addGap(38, 38, 38)
                 .addComponent(jButton12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(jButton11)
                 .addGap(15, 15, 15))
         );
 
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "SID", "Degree", "Major", "Name", "Gender", "Father"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 jTable1ComponentShown(evt);
@@ -185,20 +230,57 @@ public class registeredStudent extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentShown
+        // TODO add your handling code here:
+//        System.out.println("jTable1ComponentShown event triggered.");
+//        try {
+//            System.out.println("Attempting to connect to the database...");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/srm", "root", "2002");
+//            System.out.println("Connection successful!");
+//
+//            Statement st = con.createStatement();
+//            String sql = "SELECT * FROM student";
+//            ResultSet res = st.executeQuery(sql);
+//            System.out.println("Query executed successfully!");
+//
+//            // Checking if the ResultSet is empty
+//            if (res.next()) {
+//                System.out.println("Data retrieved from the Student table.");
+//                res.beforeFirst(); // Move cursor back to the start
+//                jTable1.setModel(DbUtils.resultSetToTableModel(res));
+//            } else {
+//                System.out.println("No data found in the Student table.");
+//            }
+//
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Connection Error: " + e.getMessage());
+//            e.printStackTrace();  
+//        }
+
+    }//GEN-LAST:event_jTable1ComponentShown
+ 
+    // To show Registered Students:
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new registeredStudent().setVisible(true);
+
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
         System.out.println("jTable1ComponentShown event triggered.");
         try {
@@ -208,24 +290,62 @@ public class registeredStudent extends javax.swing.JFrame {
             System.out.println("Connection successful!");
 
             Statement st = con.createStatement();
-            ResultSet res = st.executeQuery("SELECT * FROM Student");
+            ResultSet res = st.executeQuery("SELECT * FROM student");
+            jTable1.setModel(DbUtils.resultSetToTableModel(res));
             System.out.println("Query executed successfully!");
+            
+            
 
             // Checking if the ResultSet is empty
-            if (res.next()) {
-                System.out.println("Data retrieved from the Student table.");
-                res.beforeFirst(); // Move cursor back to the start
-                jTable1.setModel(DbUtils.resultSetToTableModel(res));
-            } else {
-                System.out.println("No data found in the Student table.");
-            }
+//            if (res.next()) {
+//                System.out.println("Data retrieved from the Student table.");
+//                res.beforeFirst(); // Move cursor back to the start
+//                jTable1.setModel(DbUtils.resultSetToTableModel(res));
+//            } else {
+//                System.out.println("No data found in the Student table.");
+//            }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Connection Error: " + e.getMessage());
             e.printStackTrace();  
         }
+        jTable1.setEnabled(false);
+    }//GEN-LAST:event_formComponentShown
 
-    }//GEN-LAST:event_jTable1ComponentShown
+    // Add New Student
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new adminHome().setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    // Insert New Data
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new insertNewResult().setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    // Results
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new Results().setVisible(true);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    // Logout
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new adminIndex().setVisible(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    // Operations:
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new operations().setVisible(true);
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments

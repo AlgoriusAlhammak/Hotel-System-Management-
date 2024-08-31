@@ -51,26 +51,58 @@ public class adminHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 204));
+
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Add New Student");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Insert New Data");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setText("Registered Students");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setText("Results");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton5.setText("Logout");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setText("Operations");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -117,7 +149,7 @@ public class adminHome extends javax.swing.JFrame {
 
         jLabel7.setText("Father's Name :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bachelor of Arts (B.A.)", "Bachelor of Science (B.Sc.)", "Bachelor of Technology (B.Tech)", "Bachelor of Engineering (B.E.)", "Bachelor of Business Administration (B.B.A.)", "Master of Arts (M.A.)", "Master of Science (M.S)", "Master of Technology (M.Tech)", "Master of Business Administration (MBA.)", "Master of Engineering (M.Eng)", "Doctor of Philosophy (Ph.D.)", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "B.A.", "B.Sc.", "B.Tech", "B.Eng", "B.B.A", "M.A", "M.Sc", "M.Tech", "MBA", "M.Eng", "Ph.D", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -165,7 +197,7 @@ public class adminHome extends javax.swing.JFrame {
                         .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField3))
                     .addComponent(jButton6))
-                .addGap(0, 77, Short.MAX_VALUE))
+                .addGap(0, 159, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,6 +284,48 @@ public class adminHome extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    // Add New Student:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new adminHome().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    // Insert New Data:
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new insertNewResult().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    // Regitered Students:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new registeredStudent().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    // Results
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new Results().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    // Logout
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new adminIndex().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    // Operations: 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new operations().setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

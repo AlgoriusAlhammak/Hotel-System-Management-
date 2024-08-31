@@ -35,14 +35,18 @@ public class index extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\algor\\OneDrive\\Documents\\Grade-Tracker-Application\\Grade-Tracker-System\\src\\LU-Campus.gif")); // NOI18N
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton1.setText("Student");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton2.setText("Admin");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -55,10 +59,10 @@ public class index extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(158, 158, 158)
-                .addComponent(jButton1)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(214, 214, 214))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
