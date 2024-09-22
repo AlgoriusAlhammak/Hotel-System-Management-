@@ -1,7 +1,4 @@
 
-###**Hotel Management System**
-
-
 # Hotel Management System
 
 **Hotel Management System** - A desktop application for hotel management built using Java, Java Swing JForms, and MySQL.
