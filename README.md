@@ -1,7 +1,7 @@
 
-### 2. **Hotel Management System**
+###**Hotel Management System**
 
-```markdown
+
 # Hotel Management System
 
 **Hotel Management System** - A desktop application for hotel management built using Java, Java Swing JForms, and MySQL.
@@ -22,7 +22,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/algorius/hotel-management-system.git
-   cd hotel-management-system
+   git clone https://github.com/AlgoriusAlhammak/Hotel-System-Management-.git
+   cd Hotel-System-Management
 2. Set up the MySQL database and configure the connection.
 3. Run the application
